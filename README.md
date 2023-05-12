@@ -1,4 +1,4 @@
-## Benchmark of Löve2D
+# Benchmark of Löve2D
 
 ![image](screenshot.png)
 
@@ -14,4 +14,16 @@ Here is the three levels of optimization:
 - 1 - Every sprite is drawn separately, but now using ArrayImage object from Löve2D. By combining every sprite image into one ArrayImage object we can only send one texture to GPU and then just pass the index of every sprites image.
 - 2 - Every sprite is drawn at once. By combining ArrayImage and SpriteBatch, we can add every sprite to SpriteBatch and just update each frame, this allows us to only make ONE drawcall to GPU.
 
-Note2: although the process time of second optimization level is greatly lower compared to first level, in my benchmarks the FPS didn't improve by much.
+## Benchmark graph
+The results of the benchmark can differ alot. So remember that my machine may a lot less powerful than yours.
+Here are the specs of my own pc:
+ - CPU: AMD A8-5600k
+ - GPU: AMD ATI Radeon HD 7560D
+ - RAM: 8GB
+ - OS: Lubuntu 22.04 LTS (5.15.0-60-generic linux kernel)
+![image](graph.png)
+
+As we can see, almost all of the Python game engines are beaten by Löve2D. Raylib and Pygame(GPU) showed close results, and at the start Löve2D(Normal) was almost beaten by Pygame(GPU), but with higher sprite count, the FPS on Pygame(GPU) was decreasing more than it did with Love2D.
+
+## Conclusion
+In the end, Love2D has beaten all of the Python libraries by a large amount.
