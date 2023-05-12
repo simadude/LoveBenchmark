@@ -1,0 +1,5 @@
+/.vscode
+love*.txt
+pygame*.txt
+raylib*.txt
+test.py
